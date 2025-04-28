@@ -14,7 +14,7 @@ const bot = new TelegramBot(TOKEN, { polling: true });
 let options = ["Pizza", "Sushi", "Burger", "Salad"];
 
 
-cron.schedule('0 30 17 * MON-FRI *', () => {
+cron.schedule('30 17 * * 1-5', () => {
   const question = "What should be today's dinner?";
   bot.sendPoll(CHATID, question, options, { is_anonymous: false });
   console.log("Poll sent!");
